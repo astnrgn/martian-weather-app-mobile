@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {Button, View, Text} from 'react-native';
 import CuriosityComponent from '../components/Curiosity';
 
@@ -15,16 +15,12 @@ class Curiosity extends React.Component {
           justifyContent: 'center',
         }}>
         <CuriosityComponent></CuriosityComponent>
-        {/* <Button
-          title="Curiosity Rover"
-          onPress={() => this.props.navigation.navigate('Curiosity')}
-        />
         <Button
-          title="InSight Lander"
-          onPress={() => this.props.navigation.navigate('InSight')}
-        /> */}
+          title="Home"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
       </View>
     );
   }
 }
-export default Home;
+export default Curiosity;
