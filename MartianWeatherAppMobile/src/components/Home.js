@@ -6,7 +6,7 @@ export default class HomeComponent extends Component {
   render() {
     return (
       <View>
-        <View style={styles.title}>
+        <View style={styles.titleContainer}>
           <Text style={styles.titleDescription}>4</Text>
           <Text style={styles.superscript}>th</Text>
           <Text style={styles.titleDescription}> Rock Weather</Text>
@@ -17,22 +17,22 @@ export default class HomeComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-  title: {
+  titleContainer: {
     flexDirection: 'row',
     borderWidth: 2,
     borderColor: '#fbf7f5',
-    alignContent: 'space-between',
+    padding: '5%',
   },
   titleDescription: {
     color: '#fbf7f5',
     // fontWeight: 'bold',
-    fontSize: 40,
-    lineHeight: 40,
+    fontSize: 42,
+    lineHeight: 42,
   },
   superscript: {
     color: '#fbf7f5',
     fontWeight: 'bold',
-    fontSize: 20,
-    lineHeight: 20,
+    fontSize: 21,
+    lineHeight: 21,
   },
 });

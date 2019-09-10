@@ -21,20 +21,26 @@ export default class Home extends Component {
         <View style={styles.homePage}>
           <View style={styles.centerBox}>
             <HomeComponent></HomeComponent>
-            <TouchableOpacity>
-              <Text
-                style={styles.curiosityContainer}
-                onPress={() => this.props.navigation.navigate('Curiosity')}>
-                Curiosity Rover
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <Text
-                style={styles.insightContainer}
-                onPress={() => this.props.navigation.navigate('InSight')}>
-                InSight Lander
-              </Text>
-            </TouchableOpacity>
+            <View>
+              <View style={styles.curiosityContainer}>
+                <TouchableOpacity>
+                  <Text
+                    style={styles.curiosityContents}
+                    onPress={() => this.props.navigation.navigate('Curiosity')}>
+                    Curiosity Rover
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.insightContainer}>
+                <TouchableOpacity>
+                  <Text
+                    style={styles.insightContents}
+                    onPress={() => this.props.navigation.navigate('InSight')}>
+                    InSight Lander
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -52,23 +58,33 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   centerBox: {
-    borderWidth: 2,
-    borderColor: 'red',
+    // borderWidth: 2,
+    // borderColor: 'red',
     width: '100%',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
   },
   curiosityContainer: {
-    fontSize: 30,
     borderWidth: 1,
     borderColor: '#fbf7f5',
+    marginTop: '45%',
+    padding: '1%',
+  },
+  curiosityContents: {
+    fontSize: 35,
     color: '#fbf7f5',
+    textAlign: 'center',
   },
   insightContainer: {
-    fontSize: 30,
     borderWidth: 1,
     borderColor: '#fbf7f5',
+    marginTop: '15%',
+    padding: '1%',
+  },
+  insightContents: {
+    fontSize: 35,
     color: '#fbf7f5',
+    textAlign: 'center',
   },
 });
