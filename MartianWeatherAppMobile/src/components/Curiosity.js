@@ -24,6 +24,7 @@ export default class CuriosityComponent extends Component {
       .then(response => {
         this.setState({
           curiosityWeatherData: response.data,
+          currentWeather: response.data[0],
         });
         console.log(this.state.curiosityWeatherData);
       })
@@ -33,14 +34,14 @@ export default class CuriosityComponent extends Component {
   }
   render() {
     let curiosityWeather = this.state.curiosityWeatherData
-      .slice(0, 7)
-      .reverse()
+      // .slice(0, 7)
+      // .reverse()
       .map((day, index) => {
         if (index <= 6) {
           day.min_temp = Math.round(1.8 * day.min_temp + 32);
           day.max_temp = Math.round(1.8 * day.max_temp + 32);
           return (
-            <View key={index}>
+            <View style={styles.curiosityViews} key={index}>
               <Text>{day.sol}</Text>
               <Text>{day.terrestrial_date}</Text>
               <Text>{day.max_temp}°F</Text>
@@ -50,13 +51,24 @@ export default class CuriosityComponent extends Component {
         }
         return null;
       });
+    let currentMax = this.state.curiosityWeatherData
+      .slice(0, 7)
+      .reverse()
+      .map((date, index) => {
+        if (index <= 0) {
+          date.max_temp = Math.round(1.8 * date.max_temp + 32);
+          return (
+            <View key={index}>
+              <Text>{date.max_temp}°F</Text>
+            </View>
+          );
+        }
+        return null;
+      });
     return (
       <View style={styles.curiosityContainer}>
-        <Text>High</Text>
-        <Text>Low</Text>
-        <View style={styles.dataContainer}>
-          <View>{curiosityWeather}</View>
-        </View>
+        {/* <View>{curiosityWeather}</View> */}
+        <View>{currentMax}</View>
       </View>
     );
   }
@@ -66,14 +78,18 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-around',
-    // height: '100%',
-    // width: '100%',
+    // justifyContent: 'flex-end',
   },
   dataContainer: {
     backgroundColor: 'white',
     height: '60%',
     width: '100%',
+  },
+  curiosityViews: {
+    borderColor: 'black',
+    borderWidth: 1,
+    flexDirection: 'row',
   },
 });
