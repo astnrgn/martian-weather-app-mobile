@@ -15,10 +15,10 @@ class InSight extends React.Component {
           justifyContent: 'center',
         }}>
         <InSightComponent></InSightComponent>
-        <Button
+        {/* <Button
           title="Home"
           onPress={() => this.props.navigation.navigate('Home')}
-        />
+        /> */}
       </View>
     );
   }

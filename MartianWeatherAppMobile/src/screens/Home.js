@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {
   StyleSheet,
   TouchableOpacity,
-  Button,
   View,
   Text,
   ImageBackground,
