@@ -1,19 +1,21 @@
 import React, {Component} from 'react';
-import {Button, View, Text} from 'react-native';
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Button,
+  View,
+  Text,
+  ImageBackground,
+} from 'react-native';
 import CuriosityComponent from '../components/Curiosity';
 
-class Curiosity extends React.Component {
+export default class Curiosity extends React.Component {
   static navigationOptions = {
     title: 'Curiosity',
   };
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
+      <View style={styles.curiosityPage}>
         <CuriosityComponent></CuriosityComponent>
         <Button
           title="Home"
@@ -23,4 +25,12 @@ class Curiosity extends React.Component {
     );
   }
 }
-export default Curiosity;
+const styles = StyleSheet.create({
+  curiosityPage: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'IBM Plex Sans',
+    backgroundColor: 'blue',
+  },
+});

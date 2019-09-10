@@ -25,13 +25,13 @@ const styles = StyleSheet.create({
   },
   titleDescription: {
     color: '#fbf7f5',
-    // fontWeight: 'bold',
+    fontWeight: '600',
     fontSize: 42,
     lineHeight: 42,
   },
   superscript: {
     color: '#fbf7f5',
-    fontWeight: 'bold',
+    fontWeight: '600',
     fontSize: 21,
     lineHeight: 21,
   },
