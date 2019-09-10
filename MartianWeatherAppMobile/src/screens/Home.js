@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    fontFamily: 'IBM Plex Sans',
   },
   backgroundImage: {
     width: '100%',
