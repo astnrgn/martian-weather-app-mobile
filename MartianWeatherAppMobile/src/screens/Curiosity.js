@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Button, View, Text} from 'react-native';
-import HomeComponent from '../components/Home';
+import CuriosityComponent from '../components/Curiosity';
 
-class Home extends Component {
+class Curiosity extends React.Component {
   static navigationOptions = {
-    title: 'Home',
+    title: 'Curiosity',
   };
   render() {
     return (
@@ -14,15 +14,15 @@ class Home extends Component {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <HomeComponent></HomeComponent>
-        <Button
+        <CuriosityComponent></CuriosityComponent>
+        {/* <Button
           title="Curiosity Rover"
           onPress={() => this.props.navigation.navigate('Curiosity')}
         />
         <Button
           title="InSight Lander"
           onPress={() => this.props.navigation.navigate('InSight')}
-        />
+        /> */}
       </View>
     );
   }
