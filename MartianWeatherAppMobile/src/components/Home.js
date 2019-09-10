@@ -6,10 +6,10 @@ export default class HomeComponent extends Component {
   render() {
     return (
       <View>
-        <View style={{flexDirection: 'row', marginBottom: 20}}>
-          <Text style={{fontSize: 20, lineHeight: 30}}>4</Text>
-          <Text style={{fontSize: 15, lineHeight: 18}}>th</Text>
-          <Text style={{fontSize: 20, lineHeight: 30}}> Rock Weather</Text>
+        <View style={styles.title}>
+          <Text style={styles.titleDescription}>4</Text>
+          <Text style={styles.superscript}>th</Text>
+          <Text style={styles.titleDescription}> Rock Weather</Text>
         </View>
       </View>
     );
@@ -17,7 +17,22 @@ export default class HomeComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-  homeTitle: {
-    backgroundColor: Colors.lighter,
+  title: {
+    flexDirection: 'row',
+    borderWidth: 2,
+    borderColor: '#fbf7f5',
+    alignContent: 'space-between',
+  },
+  titleDescription: {
+    color: '#fbf7f5',
+    // fontWeight: 'bold',
+    fontSize: 40,
+    lineHeight: 40,
+  },
+  superscript: {
+    color: '#fbf7f5',
+    fontWeight: 'bold',
+    fontSize: 20,
+    lineHeight: 20,
   },
 });
