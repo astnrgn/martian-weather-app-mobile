@@ -8,66 +8,72 @@ import {
   ImageBackground,
 } from 'react-native';
 import axios from 'axios';
-const curiositySearchUrl =
-  'https://pudding.cool/2017/12/mars-data/marsWeather.json';
+const inSightSearchUrl =
+  'https://api.nasa.gov/insight_weather/?api_key=xM37sJTj9e3rcHJysfB3KnZrZk8aXmJH7BGzTzZd&feedtype=json&ver=1.0';
 
 export default class InSightComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      curiosityWeatherData: [],
+      inSightWeatherData: [],
     };
   }
   componentDidMount() {
     axios
-      .get(curiositySearchUrl)
+      .get(inSightSearchUrl)
       .then(response => {
-        this.setState({
-          curiosityWeatherData: response.data,
-          currentWeather: response.data[0],
+        let sol = response.data.sol_keys;
+        let newInsightData = sol.map(solNumber => {
+          let formattedData = {
+            martianDate: solNumber,
+            earthDate: response.data[solNumber].First_UTC,
+            season: response.data[solNumber].Season,
+            maxTemp: response.data[solNumber].AT.mx,
+            minTemp: response.data[solNumber].AT.mn,
+          };
+          return formattedData;
         });
-        console.log(this.state.curiosityWeatherData);
+        this.setState({
+          inSightWeatherData: newInsightData,
+        });
+        console.log(this.state.inSightWeatherData);
       })
       .catch(err => {
         console.error(err);
       });
   }
   render() {
-    let curiosityWeather = this.state.curiosityWeatherData
-      .slice(0, 7)
-      .map((day, index) => {
-        if (index <= 6) {
-          day.min_temp = Math.round(1.8 * day.min_temp + 32);
-          day.max_temp = Math.round(1.8 * day.max_temp + 32);
-          startDate = day.terrestrial_date.substring(6, 7);
-          midDate = day.terrestrial_date.substring(7, 8);
-          endDate = day.terrestrial_date.substring(9, 10);
-          day.terrestrial_date =
-            ' ' + startDate + ' ' + midDate + ' ' + endDate;
-          return (
-            <View style={styles.curiosityViews} key={index}>
-              <View style={styles.weatherValueBox}>
-                <Text style={styles.weatherValueText}>{day.sol}</Text>
-              </View>
-              <View style={styles.weatherValueBoxEarth}>
-                <Text style={styles.weatherValueText}>
-                  {day.terrestrial_date}
-                </Text>
-              </View>
-              <View style={styles.weatherValueBox}>
-                <Text style={styles.maxMultipleText}>
-                  {day.max_temp}
-                  {' ' + ' '}
-                  <Text style={styles.minMultipleText}>{day.min_temp}</Text>
-                </Text>
-                {/* <Text style={styles.weatherValueText}>{day.min_temp}</Text> */}
-              </View>
+    let inSightWeather = this.state.inSightWeatherData.map((day, index) => {
+      if (index <= 6) {
+        day.min_temp = Math.round(1.8 * day.min_temp + 32);
+        day.max_temp = Math.round(1.8 * day.max_temp + 32);
+        // startDate = day.terrestrial_date.substring(6, 7);
+        // midDate = day.terrestrial_date.substring(7, 8);
+        // endDate = day.terrestrial_date.substring(9, 10);
+        // day.terrestrial_date =
+        //   ' ' + startDate + ' ' + midDate + ' ' + endDate;
+        return (
+          <View style={styles.inSightViews} key={index}>
+            <View style={styles.weatherValueBox}>
+              <Text style={styles.weatherValueText}>{day.martianDate}</Text>
             </View>
-          );
-        }
-        return null;
-      });
-    let currentMax = this.state.curiosityWeatherData
+            <View style={styles.weatherValueBoxEarth}>
+              <Text style={styles.weatherValueText}>{day.earthDate}</Text>
+            </View>
+            <View style={styles.weatherValueBox}>
+              <Text style={styles.maxMultipleText}>
+                {day.maxTemp}
+                {' ' + ' '}
+                <Text style={styles.minMultipleText}>{day.minTemp}</Text>
+              </Text>
+              {/* <Text style={styles.weatherValueText}>{day.min_temp}</Text> */}
+            </View>
+          </View>
+        );
+      }
+      return null;
+    });
+    let currentMax = this.state.inSightWeatherData
       .slice(0, 7)
       .map((day, index) => {
         if (index == 0) {
@@ -77,10 +83,10 @@ export default class InSightComponent extends Component {
                 <Text style={styles.seasonText}>{day.season}</Text>
               </View>
               <View>
-                <Text style={styles.maxSingleText}>{day.max_temp}°F</Text>
+                <Text style={styles.maxSingleText}>{day.maxTemp}°F</Text>
               </View>
               <View>
-                <Text style={styles.minSingleText}>{day.min_temp}°F</Text>
+                <Text style={styles.minSingleText}>{day.minTemp}°F</Text>
               </View>
             </View>
           );
@@ -89,11 +95,11 @@ export default class InSightComponent extends Component {
       });
 
     return (
-      <View style={styles.curiosityContainer}>
+      <View style={styles.inSightContainer}>
         <View>{currentMax}</View>
         <View style={styles.currentInformation}>
           <View>
-            <Text style={styles.currentLocationText}>Gale Crater</Text>
+            <Text style={styles.currentLocationText}>Elysium Planitia</Text>
           </View>
           <View style={styles.weatherKeyView}>
             <View style={styles.keyValueBox}>
@@ -106,14 +112,14 @@ export default class InSightComponent extends Component {
               <Text style={styles.keyValueText}>H // L </Text>
             </View>
           </View>
-          {curiosityWeather}
+          {inSightWeather}
         </View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
-  curiosityContainer: {
+  inSightContainer: {
     borderColor: 'gold',
     borderWidth: 2,
     flex: 1,
@@ -133,7 +139,7 @@ const styles = StyleSheet.create({
     padding: 18,
     letterSpacing: 2,
   },
-  curiosityViews: {
+  inSightViews: {
     borderColor: 'black',
     borderWidth: 1,
     display: 'flex',
