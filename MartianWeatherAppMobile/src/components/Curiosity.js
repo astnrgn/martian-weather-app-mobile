@@ -39,15 +39,18 @@ export default class CuriosityComponent extends Component {
         if (index <= 6) {
           day.min_temp = Math.round(1.8 * day.min_temp + 32);
           day.max_temp = Math.round(1.8 * day.max_temp + 32);
+          day.terrestrial_date = day.terrestrial_date.substring(5, 10);
           return (
             <View style={styles.curiosityViews} key={index}>
-              <View>
-                <Text>{day.sol} </Text>
+              <View style={styles.weatherValueBox}>
+                <Text>{day.sol}</Text>
               </View>
-              <View>
-                <Text>{day.terrestrial_date}</Text>
+              <View style={styles.weatherValueBox}>
+                <Text style={styles.terrestrialText}>
+                  {day.terrestrial_date}
+                </Text>
               </View>
-              <View>
+              <View style={styles.weatherValueBox}>
                 <Text style={styles.maxMultipleText}>{day.max_temp}°F</Text>
                 <Text>{day.min_temp}°F</Text>
               </View>
@@ -81,7 +84,20 @@ export default class CuriosityComponent extends Component {
       <View style={styles.curiosityContainer}>
         <View>{currentMax}</View>
         <View style={styles.currentLocation}>
-          <Text style={styles.currentLocationText}>Gale Crater</Text>
+          <View>
+            <Text style={styles.currentLocationText}>Gale Crater</Text>
+          </View>
+          <View style={styles.weatherKeyView}>
+            <View style={styles.keyValueBox}>
+              <Text style={styles.currentEarthDate}>Sol</Text>
+            </View>
+            <View style={styles.keyValueBox}>
+              <Text style={styles.currentEarthDate}>Earth</Text>
+            </View>
+            <View style={styles.keyValueBox}>
+              <Text style={styles.currentEarthDate}>H / L</Text>
+            </View>
+          </View>
           {curiosityWeather}
         </View>
       </View>
@@ -93,8 +109,6 @@ const styles = StyleSheet.create({
     borderColor: 'gold',
     borderWidth: 2,
     flex: 1,
-    // flexDirection: 'column',
-    // alignItems: 'center',
     justifyContent: 'space-between',
   },
   currentLocation: {
@@ -105,18 +119,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-  dataContainer: {
-    backgroundColor: 'white',
-    height: '60%',
-    width: '100%',
-  },
   curiosityViews: {
     borderColor: 'black',
     borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
   },
   maxView: {
     borderColor: 'black',
@@ -133,5 +142,26 @@ const styles = StyleSheet.create({
   },
   seasonText: {
     textDecorationLine: 'underline',
+  },
+  weatherKeyView: {
+    borderColor: 'black',
+    borderWidth: 1,
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  currentEarthDate: {
+    textAlign: 'center',
+    // fontSize: 18,
+    // letterSpacing: 1,
+  },
+  weatherValueBox: {
+    borderColor: 'black',
+    borderWidth: 1,
+  },
+  keyValueBox: {
+    borderColor: 'black',
+    borderWidth: 1,
   },
 });
