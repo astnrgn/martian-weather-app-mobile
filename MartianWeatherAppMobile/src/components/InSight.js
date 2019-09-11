@@ -45,13 +45,12 @@ export default class InSightComponent extends Component {
   render() {
     let inSightWeather = this.state.inSightWeatherData.map((day, index) => {
       if (index <= 6) {
-        day.min_temp = Math.round(1.8 * day.min_temp + 32);
-        day.max_temp = Math.round(1.8 * day.max_temp + 32);
-        // startDate = day.terrestrial_date.substring(6, 7);
-        // midDate = day.terrestrial_date.substring(7, 8);
-        // endDate = day.terrestrial_date.substring(9, 10);
-        // day.terrestrial_date =
-        //   ' ' + startDate + ' ' + midDate + ' ' + endDate;
+        day.minTemp = Math.round(1.8 * day.minTemp + 32);
+        day.maxTemp = Math.round(1.8 * day.maxTemp + 32);
+        startDate = day.earthDate.substring(6, 7);
+        midDate = day.earthDate.substring(7, 8);
+        endDate = day.earthDate.substring(8, 10);
+        day.earthDate = ' ' + startDate + ' ' + midDate + ' ' + endDate;
         return (
           <View style={styles.inSightViews} key={index}>
             <View style={styles.weatherValueBox}>
@@ -103,7 +102,7 @@ export default class InSightComponent extends Component {
           </View>
           <View style={styles.weatherKeyView}>
             <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}> Sol</Text>
+              <Text style={styles.keyValueText}>Sol</Text>
             </View>
             <View style={styles.keyValueBox}>
               <Text style={styles.keyValueText}> Earth</Text>
@@ -159,6 +158,7 @@ const styles = StyleSheet.create({
   seasonText: {
     // textDecorationLine: 'underline',
     fontSize: 16,
+    textTransform: 'capitalize',
   },
   maxSingleText: {
     fontWeight: 'bold',

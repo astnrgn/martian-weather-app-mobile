@@ -41,7 +41,7 @@ export default class CuriosityComponent extends Component {
           day.max_temp = Math.round(1.8 * day.max_temp + 32);
           startDate = day.terrestrial_date.substring(6, 7);
           midDate = day.terrestrial_date.substring(7, 8);
-          endDate = day.terrestrial_date.substring(9, 10);
+          endDate = day.terrestrial_date.substring(8, 10);
           day.terrestrial_date =
             ' ' + startDate + ' ' + midDate + ' ' + endDate;
           return (
