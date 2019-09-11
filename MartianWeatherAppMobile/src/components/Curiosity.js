@@ -48,9 +48,7 @@ export default class CuriosityComponent extends Component {
                 <Text>{day.terrestrial_date}</Text>
               </View>
               <View>
-                <Text>{day.max_temp}°F</Text>
-              </View>
-              <View>
+                <Text style={styles.maxMultipleText}>{day.max_temp}°F</Text>
                 <Text>{day.min_temp}°F</Text>
               </View>
             </View>
@@ -65,10 +63,10 @@ export default class CuriosityComponent extends Component {
           return (
             <View style={styles.maxView} key={index}>
               <View>
-                <Text>{day.season}</Text>
+                <Text style={styles.seasonText}>{day.season}</Text>
               </View>
               <View>
-                <Text>{day.max_temp}°F</Text>
+                <Text style={styles.maxSingleText}>{day.max_temp}°F</Text>
               </View>
               <View>
                 <Text>{day.min_temp}°F</Text>
@@ -82,22 +80,30 @@ export default class CuriosityComponent extends Component {
     return (
       <View style={styles.curiosityContainer}>
         <View>{currentMax}</View>
-        <View>
-          <Text>Gale Crater</Text>
+        <View style={styles.currentLocation}>
+          <Text style={styles.currentLocationText}>Gale Crater</Text>
+          {curiosityWeather}
         </View>
-        <View>{curiosityWeather}</View>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   curiosityContainer: {
+    borderColor: 'gold',
+    borderWidth: 2,
+    flex: 1,
+    // flexDirection: 'column',
+    // alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  currentLocation: {
     borderColor: 'black',
     borderWidth: 1,
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    // justifyContent: 'flex-end',
+  },
+  currentLocationText: {
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   dataContainer: {
     backgroundColor: 'white',
@@ -110,10 +116,22 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
+    justifyContent: 'space-evenly',
   },
   maxView: {
+    borderColor: 'black',
+    borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
+  },
+  maxMultipleText: {
+    fontWeight: 'bold',
+  },
+  maxSingleText: {
+    fontWeight: 'bold',
+  },
+  seasonText: {
+    textDecorationLine: 'underline',
   },
 });
