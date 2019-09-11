@@ -41,10 +41,18 @@ export default class CuriosityComponent extends Component {
           day.max_temp = Math.round(1.8 * day.max_temp + 32);
           return (
             <View style={styles.curiosityViews} key={index}>
-              <Text>{day.sol}</Text>
-              <Text>{day.terrestrial_date}</Text>
-              <Text>{day.max_temp}°F</Text>
-              <Text>{day.min_temp}°F</Text>
+              <View>
+                <Text>{day.sol} </Text>
+              </View>
+              <View>
+                <Text>{day.terrestrial_date}</Text>
+              </View>
+              <View>
+                <Text>{day.max_temp}°F</Text>
+              </View>
+              <View>
+                <Text>{day.min_temp}°F</Text>
+              </View>
             </View>
           );
         }
@@ -55,17 +63,29 @@ export default class CuriosityComponent extends Component {
       .map((day, index) => {
         if (index == 0) {
           return (
-            <View style={styles.curiosityViews} key={index}>
-              <Text>{day.max_temp}°F</Text>
+            <View style={styles.maxView} key={index}>
+              <View>
+                <Text>{day.season}</Text>
+              </View>
+              <View>
+                <Text>{day.max_temp}°F</Text>
+              </View>
+              <View>
+                <Text>{day.min_temp}°F</Text>
+              </View>
             </View>
           );
         }
         return null;
       });
+
     return (
       <View style={styles.curiosityContainer}>
-        <View>{curiosityWeather}</View>
         <View>{currentMax}</View>
+        <View>
+          <Text>Gale Crater</Text>
+        </View>
+        <View>{curiosityWeather}</View>
       </View>
     );
   }
@@ -87,6 +107,13 @@ const styles = StyleSheet.create({
   curiosityViews: {
     borderColor: 'black',
     borderWidth: 1,
+    display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
+  },
+  maxView: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
   },
 });
