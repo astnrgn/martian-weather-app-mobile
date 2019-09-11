@@ -114,16 +114,16 @@ export default class CuriosityComponent extends Component {
 }
 const styles = StyleSheet.create({
   curiosityContainer: {
-    // borderColor: 'gold',
-    // borderWidth: 2,
+    borderColor: 'gold',
+    borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
     borderColor: 'black',
-    // backgroundColor: 'white',
+    backgroundColor: 'white',
     borderWidth: 1,
-    paddingBottom: 30,
+    paddingBottom: 10,
     paddingHorizontal: 15,
   },
   currentLocationText: {
@@ -132,7 +132,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     padding: 18,
     letterSpacing: 2,
-    color: '#fbf7f5',
   },
   curiosityViews: {
     borderColor: 'black',
@@ -154,16 +153,13 @@ const styles = StyleSheet.create({
   seasonText: {
     // textDecorationLine: 'underline',
     fontSize: 16,
-    color: '#fbf7f5',
   },
   maxSingleText: {
     fontWeight: 'bold',
     fontSize: 53,
-    color: '#fbf7f5',
   },
   minSingleText: {
     fontSize: 18,
-    color: '#fbf7f5',
   },
   weatherKeyView: {
     borderColor: 'black',
@@ -183,12 +179,10 @@ const styles = StyleSheet.create({
   },
   weatherValueText: {
     fontSize: 17,
-    color: '#fbf7f5',
   },
   maxMultipleText: {
     fontWeight: 'bold',
     fontSize: 14,
-    color: '#fbf7f5',
   },
   minMultipleText: {
     fontWeight: 'normal',
@@ -201,6 +195,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#fbf7f5',
   },
 });
