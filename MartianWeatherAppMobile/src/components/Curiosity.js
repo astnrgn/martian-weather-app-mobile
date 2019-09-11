@@ -39,20 +39,28 @@ export default class CuriosityComponent extends Component {
         if (index <= 6) {
           day.min_temp = Math.round(1.8 * day.min_temp + 32);
           day.max_temp = Math.round(1.8 * day.max_temp + 32);
-          day.terrestrial_date = day.terrestrial_date.substring(5, 10);
+          startDate = day.terrestrial_date.substring(6, 7);
+          midDate = day.terrestrial_date.substring(7, 8);
+          endDate = day.terrestrial_date.substring(9, 10);
+          day.terrestrial_date =
+            ' ' + startDate + ' ' + midDate + ' ' + endDate;
           return (
             <View style={styles.curiosityViews} key={index}>
               <View style={styles.weatherValueBox}>
                 <Text style={styles.weatherValueText}>{day.sol}</Text>
               </View>
-              <View style={styles.weatherValueBox}>
+              <View style={styles.weatherValueBoxEarth}>
                 <Text style={styles.weatherValueText}>
                   {day.terrestrial_date}
                 </Text>
               </View>
               <View style={styles.weatherValueBox}>
-                <Text style={styles.maxMultipleText}>{day.max_temp}°F</Text>
-                <Text style={styles.weatherValueText}>{day.min_temp}°F</Text>
+                <Text style={styles.maxMultipleText}>
+                  {day.max_temp}
+                  {' ' + ' '}
+                  <Text style={styles.minMultipleText}>{day.min_temp}</Text>
+                </Text>
+                {/* <Text style={styles.weatherValueText}>{day.min_temp}</Text> */}
               </View>
             </View>
           );
@@ -72,7 +80,7 @@ export default class CuriosityComponent extends Component {
                 <Text style={styles.maxSingleText}>{day.max_temp}°F</Text>
               </View>
               <View>
-                <Text>{day.min_temp}°F</Text>
+                <Text style={styles.minSingleText}>{day.min_temp}°F</Text>
               </View>
             </View>
           );
@@ -89,13 +97,13 @@ export default class CuriosityComponent extends Component {
           </View>
           <View style={styles.weatherKeyView}>
             <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}>Sol</Text>
+              <Text style={styles.keyValueText}> Sol</Text>
             </View>
             <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}>Earth</Text>
+              <Text style={styles.keyValueText}> Earth</Text>
             </View>
             <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}>H / L</Text>
+              <Text style={styles.keyValueText}>H // L </Text>
             </View>
           </View>
           {curiosityWeather}
@@ -110,18 +118,19 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
-    marginBottom: 10,
   },
   currentInformation: {
     borderColor: 'black',
     backgroundColor: 'white',
     borderWidth: 1,
+    paddingBottom: 10,
+    paddingHorizontal: 15,
   },
   currentLocationText: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 24,
-    padding: 10,
+    fontSize: 25,
+    padding: 18,
     letterSpacing: 2,
   },
   curiosityViews: {
@@ -131,6 +140,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginVertical: 2,
   },
   maxView: {
     borderColor: 'black',
@@ -138,13 +148,18 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
+    marginTop: 40,
+  },
+  seasonText: {
+    // textDecorationLine: 'underline',
+    fontSize: 16,
   },
   maxSingleText: {
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 53,
   },
-  seasonText: {
-    textDecorationLine: 'underline',
+  minSingleText: {
+    fontSize: 18,
   },
   weatherKeyView: {
     borderColor: 'black',
@@ -158,12 +173,19 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
   },
+  weatherValueBoxEarth: {
+    borderColor: 'black',
+    borderWidth: 1,
+  },
   weatherValueText: {
-    fontSize: 14,
+    fontSize: 17,
   },
   maxMultipleText: {
     fontWeight: 'bold',
     fontSize: 14,
+  },
+  minMultipleText: {
+    fontWeight: 'normal',
   },
   keyValueBox: {
     borderColor: 'black',
@@ -171,7 +193,7 @@ const styles = StyleSheet.create({
   },
   keyValueText: {
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
   },
 });
