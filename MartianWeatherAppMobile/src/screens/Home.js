@@ -6,6 +6,10 @@ import {
   Text,
   ImageBackground,
 } from 'react-native';
+import {Gyroscope} from 'react-native-sensors';
+const Dimensions = require('Dimensions');
+const PixelRatio = require('PixelRatio');
+const window = Dimensions.get('window');
 import HomeComponent from '../components/Home';
 
 export default class Home extends Component {
