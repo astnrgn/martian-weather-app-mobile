@@ -34,8 +34,7 @@ export default class CuriosityComponent extends Component {
   }
   render() {
     let curiosityWeather = this.state.curiosityWeatherData
-      // .slice(0, 7)
-      // .reverse()
+      .slice(0, 7)
       .map((day, index) => {
         if (index <= 6) {
           day.min_temp = Math.round(1.8 * day.min_temp + 32);
@@ -53,13 +52,11 @@ export default class CuriosityComponent extends Component {
       });
     let currentMax = this.state.curiosityWeatherData
       .slice(0, 7)
-      .reverse()
-      .map((date, index) => {
-        if (index <= 0) {
-          date.max_temp = Math.round(1.8 * date.max_temp + 32);
+      .map((day, index) => {
+        if (index == 0) {
           return (
-            <View key={index}>
-              <Text>{date.max_temp}°F</Text>
+            <View style={styles.curiosityViews} key={index}>
+              <Text>{day.max_temp}°F</Text>
             </View>
           );
         }
@@ -67,7 +64,7 @@ export default class CuriosityComponent extends Component {
       });
     return (
       <View style={styles.curiosityContainer}>
-        {/* <View>{curiosityWeather}</View> */}
+        <View>{curiosityWeather}</View>
         <View>{currentMax}</View>
       </View>
     );
