@@ -15,18 +15,22 @@ export default class Curiosity extends React.Component {
   };
   render() {
     return (
-      <View style={styles.curiosityPage}>
-        <View style={styles.curiosityBox}>
-          {/* <TouchableOpacity>
+      <ImageBackground
+        source={require('../images/spaceLoop.gif')}
+        style={styles.backgroundImage}>
+        <View style={styles.curiosityPage}>
+          <View style={styles.curiosityBox}>
+            {/* <TouchableOpacity>
             <Text
               style={styles.homeButton}
               onPress={() => this.props.navigation.navigate('Home')}>
               - Home -
             </Text>
           </TouchableOpacity> */}
-          <CuriosityComponent></CuriosityComponent>
+            <CuriosityComponent></CuriosityComponent>
+          </View>
         </View>
-      </View>
+      </ImageBackground>
     );
   }
 }
@@ -38,15 +42,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'IBM Plex Sans',
-    backgroundColor: 'cyan',
+    // backgroundColor: 'cyan',
+  },
+  backgroundImage: {
+    width: '100%',
+    height: '100%',
   },
   homeButton: {
     borderColor: 'green',
     borderWidth: 3,
   },
   curiosityBox: {
-    borderColor: 'red',
-    borderWidth: 1,
+    // borderColor: 'red',
+    // borderWidth: 1,
     height: '100%',
     width: '100%',
   },
