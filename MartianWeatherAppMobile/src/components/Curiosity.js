@@ -19,6 +19,7 @@ const FadeInView = props => {
     Animated.timing(fadeAdmin, {
       toValue: 1,
       duration: 1000,
+      useNativeDriver: true,
     }).start();
   }, []);
 
@@ -47,7 +48,6 @@ export default class CuriosityComponent extends Component {
           curiosityWeatherData: response.data,
           currentWeather: response.data[0],
         });
-        console.log(this.state.curiosityWeatherData);
       })
       .catch(err => {
         console.error(err);

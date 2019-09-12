@@ -19,6 +19,7 @@ const FadeInView = props => {
     Animated.timing(fadeAdmin, {
       toValue: 1,
       duration: 1000,
+      useNativeDriver: true,
     }).start();
   }, []);
 
@@ -58,7 +59,6 @@ export default class InSightComponent extends Component {
         this.setState({
           inSightWeatherData: newInsightData,
         });
-        console.log(this.state.inSightWeatherData);
       })
       .catch(err => {
         console.error(err);

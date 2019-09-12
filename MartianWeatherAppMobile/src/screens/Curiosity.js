@@ -17,7 +17,7 @@ export default class Curiosity extends Component {
   render() {
     return (
       <ImageBackground
-        source={require('../images/rotatingMars.gif')}
+        source={require('../images/mars.jpeg')}
         style={styles.backgroundImage}>
         <View style={styles.curiosityPage}>
           <View style={styles.curiosityBox}>
