@@ -16,7 +16,7 @@ export default class Curiosity extends React.Component {
   render() {
     return (
       <ImageBackground
-        source={require('../images/spaceLoop.gif')}
+        source={require('../images/rotatingMars.gif')}
         style={styles.backgroundImage}>
         <View style={styles.curiosityPage}>
           <View style={styles.curiosityBox}>
