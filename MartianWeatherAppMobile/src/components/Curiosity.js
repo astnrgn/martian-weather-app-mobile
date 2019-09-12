@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   StyleSheet,
+  Animated,
   TouchableOpacity,
   Button,
   View,
@@ -11,6 +12,26 @@ import axios from 'axios';
 const curiositySearchUrl =
   'https://pudding.cool/2017/12/mars-data/marsWeather.json';
 
+const FadeInView = props => {
+  const [fadeAdmin] = useState(new Animated.Value(0)); // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(fadeAdmin, {
+      toValue: 1,
+      duration: 1000,
+    }).start();
+  }, []);
+
+  return (
+    <Animated.View // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAdmin, // Bind opacity to animated value
+      }}>
+      {props.children}
+    </Animated.View>
+  );
+};
 export default class CuriosityComponent extends Component {
   constructor(props) {
     super(props);
@@ -89,7 +110,7 @@ export default class CuriosityComponent extends Component {
       });
 
     return (
-      <View style={styles.curiosityContainer}>
+      <FadeInView style={styles.curiosityContainer}>
         <View>{currentMax}</View>
         <View style={styles.currentInformation}>
           <View>
@@ -108,7 +129,7 @@ export default class CuriosityComponent extends Component {
           </View>
           {curiosityWeather}
         </View>
-      </View>
+      </FadeInView>
     );
   }
 }

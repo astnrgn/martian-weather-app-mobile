@@ -1,4 +1,4 @@
-import React, {Component, useState, useEffect} from 'react';
+import React, {Component} from 'react';
 import {
   StyleSheet,
   Animated,
@@ -10,28 +10,7 @@ import {
 } from 'react-native';
 import InSightComponent from '../components/InSight';
 
-const FadeInView = props => {
-  const [fadeAdmin] = useState(new Animated.Value(0)); // Initial value for opacity: 0
-
-  React.useEffect(() => {
-    Animated.timing(fadeAdmin, {
-      toValue: 1,
-      duration: 1000,
-    }).start();
-  }, []);
-
-  return (
-    <Animated.View // Special animatable View
-      style={{
-        ...props.style,
-        opacity: fadeAdmin, // Bind opacity to animated value
-      }}>
-      {props.children}
-    </Animated.View>
-  );
-};
-
-export default class InSight extends React.Component {
+export default class InSight extends Component {
   static navigationOptions = {
     title: 'InSight',
   };
@@ -41,7 +20,7 @@ export default class InSight extends React.Component {
         source={require('../images/spaceLoop.gif')}
         style={styles.backgroundImage}>
         <View style={styles.inSightPage}>
-          <FadeInView style={styles.inSightBox}>
+          <View style={styles.inSightBox}>
             {/* <TouchableOpacity>
             <Text
               style={styles.homeButton}
@@ -50,7 +29,7 @@ export default class InSight extends React.Component {
             </Text>
           </TouchableOpacity> */}
             <InSightComponent></InSightComponent>
-          </FadeInView>
+          </View>
         </View>
       </ImageBackground>
     );

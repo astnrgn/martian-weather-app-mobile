@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import {
   StyleSheet,
+  Animated,
   TouchableOpacity,
   Button,
   View,
@@ -10,6 +11,27 @@ import {
 import axios from 'axios';
 const inSightSearchUrl =
   'https://api.nasa.gov/insight_weather/?api_key=xM37sJTj9e3rcHJysfB3KnZrZk8aXmJH7BGzTzZd&feedtype=json&ver=1.0';
+
+const FadeInView = props => {
+  const [fadeAdmin] = useState(new Animated.Value(0)); // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(fadeAdmin, {
+      toValue: 1,
+      duration: 1000,
+    }).start();
+  }, []);
+
+  return (
+    <Animated.View // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAdmin, // Bind opacity to animated value
+      }}>
+      {props.children}
+    </Animated.View>
+  );
+};
 
 export default class InSightComponent extends Component {
   constructor(props) {
@@ -94,7 +116,7 @@ export default class InSightComponent extends Component {
       });
 
     return (
-      <View style={styles.inSightContainer}>
+      <FadeInView style={styles.inSightContainer}>
         <View>{currentMax}</View>
         <View style={styles.currentInformation}>
           <View>
@@ -113,7 +135,7 @@ export default class InSightComponent extends Component {
           </View>
           {inSightWeather}
         </View>
-      </View>
+      </FadeInView>
     );
   }
 }
