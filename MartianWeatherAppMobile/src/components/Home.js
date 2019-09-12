@@ -9,13 +9,14 @@ export default class HomeComponent extends Component {
       <View>
         <View style={styles.titleContainer}>
           <Shimmer>
-            <Text>bla bla.... </Text>
+            <Text style={styles.titleDescription}>4</Text>
           </Shimmer>
-
-          <Text style={styles.titleDescription}>4</Text>
-
-          <Text style={styles.superscript}>th</Text>
-          <Text style={styles.titleDescription}> Rock Weather</Text>
+          <Shimmer>
+            <Text style={styles.superscript}>th</Text>
+          </Shimmer>
+          <Shimmer>
+            <Text style={styles.titleDescription}> Rock Weather</Text>
+          </Shimmer>
         </View>
       </View>
     );
