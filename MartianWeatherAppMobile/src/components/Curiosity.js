@@ -64,7 +64,7 @@ export default class CuriosityComponent extends Component {
           midDate = day.terrestrial_date.substring(7, 8);
           endDate = day.terrestrial_date.substring(8, 10);
           day.terrestrial_date =
-            ' ' + startDate + ' ' + midDate + ' ' + endDate;
+            '     ' + startDate + ' ' + midDate + ' ' + endDate;
           return (
             <View style={styles.curiosityViews} key={index}>
               <View style={styles.weatherValueBox}>
@@ -135,15 +135,15 @@ export default class CuriosityComponent extends Component {
 }
 const styles = StyleSheet.create({
   curiosityContainer: {
-    // borderColor: 'gold',
+    borderColor: 'gold',
     borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
-    // borderColor: 'black',
-    // backgroundColor: 'white',
-    // borderWidth: 1,
+    borderColor: 'black',
+    backgroundColor: 'blue',
+    borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
   },
@@ -156,8 +156,8 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   curiosityViews: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
@@ -165,15 +165,15 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   maxView: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
     marginTop: 40,
   },
   seasonText: {
-    // textDecorationLine: 'underline',
+    textDecorationLine: 'underline',
     fontSize: 16,
     color: '#fbf7f5',
   },
@@ -187,20 +187,20 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   weatherKeyView: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   weatherValueBox: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 1,
   },
   weatherValueBoxEarth: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 1,
   },
   weatherValueText: {
     fontSize: 17,
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   },
   maxMultipleText: {
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 16,
     color: '#fbf7f5',
   },
   minMultipleText: {
@@ -216,8 +216,8 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   keyValueBox: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'black',
+    borderWidth: 1,
   },
   keyValueText: {
     textAlign: 'center',

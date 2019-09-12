@@ -72,22 +72,21 @@ export default class InSightComponent extends Component {
         startDate = day.earthDate.substring(6, 7);
         midDate = day.earthDate.substring(7, 8);
         endDate = day.earthDate.substring(8, 10);
-        day.earthDate = ' ' + startDate + ' ' + midDate + ' ' + endDate;
+        day.earthDate = startDate + midDate + endDate;
         return (
-          <View style={styles.inSightViews} key={index}>
-            <View style={styles.weatherValueBox}>
+          <View>
+            <View>
               <Text style={styles.weatherValueText}>{day.martianDate}</Text>
             </View>
-            <View style={styles.weatherValueBoxEarth}>
+            <View>
               <Text style={styles.weatherValueText}>{day.earthDate}</Text>
             </View>
-            <View style={styles.weatherValueBox}>
+            <View>
               <Text style={styles.maxMultipleText}>
                 {day.maxTemp}
                 {' ' + ' '}
                 <Text style={styles.minMultipleText}>{day.minTemp}</Text>
               </Text>
-              {/* <Text style={styles.weatherValueText}>{day.min_temp}</Text> */}
             </View>
           </View>
         );
@@ -100,13 +99,13 @@ export default class InSightComponent extends Component {
         if (index == 0) {
           return (
             <View style={styles.maxView} key={index}>
-              <View>
+              <View style={styles.weatherValueBox}>
                 <Text style={styles.seasonText}>{day.season}</Text>
               </View>
-              <View>
+              <View style={styles.weatherValueBox}>
                 <Text style={styles.maxSingleText}>{day.maxTemp}°F</Text>
               </View>
-              <View>
+              <View style={styles.weatherValueBox}>
                 <Text style={styles.minSingleText}>{day.minTemp}°F</Text>
               </View>
             </View>
@@ -123,17 +122,17 @@ export default class InSightComponent extends Component {
             <Text style={styles.currentLocationText}>Elysium Planitia</Text>
           </View>
           <View style={styles.weatherKeyView}>
-            <View style={styles.keyValueBox}>
+            <View>
               <Text style={styles.keyValueText}>Sol</Text>
             </View>
-            <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}> Earth</Text>
+            <View>
+              <Text style={styles.keyValueText}>Earth</Text>
             </View>
-            <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}>H // L </Text>
+            <View>
+              <Text style={styles.keyValueText}>H/L</Text>
             </View>
           </View>
-          {inSightWeather}
+          <View style={styles.inSightViews}>{inSightWeather}</View>
         </View>
       </FadeInView>
     );
@@ -141,14 +140,14 @@ export default class InSightComponent extends Component {
 }
 const styles = StyleSheet.create({
   inSightContainer: {
-    // borderColor: 'gold',
-    // borderWidth: 2,
+    borderColor: 'white',
+    borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
-    // borderColor: 'black',
-    // backgroundColor: 'white',
+    borderColor: 'white',
+    // backgroundColor: 'blue',
     borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
@@ -162,24 +161,33 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   inSightViews: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'white',
+    borderWidth: 1,
     display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    // marginVertical: 2,
+  },
+  inSightViews2: {
+    borderColor: 'white',
+    borderWidth: 1,
+    display: 'flex',
+    justifyContent: 'space-around',
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-around',
     marginVertical: 2,
   },
   maxView: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'white',
+    borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
     marginTop: 40,
   },
   seasonText: {
-    // textDecorationLine: 'underline',
+    textDecorationLine: 'underline',
     fontSize: 16,
     textTransform: 'capitalize',
     color: '#fbf7f5',
@@ -194,39 +202,45 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   weatherKeyView: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'white',
+    borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   weatherValueBox: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'white',
+    borderWidth: 1,
   },
   weatherValueBoxEarth: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    borderColor: 'white',
+    borderWidth: 1,
   },
   weatherValueText: {
+    borderColor: 'white',
+    borderWidth: 1,
     fontSize: 17,
     color: '#fbf7f5',
+    textAlign: 'center',
   },
   maxMultipleText: {
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 16,
     color: '#fbf7f5',
   },
   minMultipleText: {
     fontWeight: 'normal',
+    fontSize: 13,
     color: '#fbf7f5',
   },
   keyValueBox: {
-    // borderColor: 'black',
-    // borderWidth: 1,
+    // borderColor: 'white',
+    borderWidth: 1,
   },
   keyValueText: {
+    borderColor: 'white',
+    borderWidth: 1,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
