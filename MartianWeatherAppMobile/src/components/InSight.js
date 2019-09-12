@@ -82,10 +82,10 @@ export default class InSightComponent extends Component {
               <View style={styles.divs}>
                 <Text style={styles.weatherValueText}>{day.earthDate}</Text>
               </View>
-              <View style={styles.divs}>
+              <View style={styles.divs2}>
                 <Text style={styles.maxMultipleText}>
                   {day.maxTemp}
-                  {' ' + ' '}
+                  {'  '}
                   <Text style={styles.minMultipleText}>{day.minTemp}</Text>
                 </Text>
               </View>
@@ -132,7 +132,7 @@ export default class InSightComponent extends Component {
                 <Text style={styles.keyValueText}>Earth</Text>
               </View>
               <View style={styles.divs}>
-                <Text style={styles.keyValueText}>H/L</Text>
+                <Text style={styles.keyValueText}>H / L</Text>
               </View>
             </View>
             {inSightWeather}
@@ -156,18 +156,22 @@ const styles = StyleSheet.create({
     height: 40,
     width: 75,
   },
+  divs2: {
+    height: 40,
+    width: 77,
+  },
   // martian: {
   //   display: 'flex',
   //   flexDirection: 'row',
   // },
   inSightContainer: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
-    borderColor: 'white',
+    // borderColor: 'white',
     // backgroundColor: 'blue',
     borderWidth: 1,
     paddingBottom: 10,
@@ -176,13 +180,13 @@ const styles = StyleSheet.create({
   currentLocationText: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 27,
     padding: 18,
     letterSpacing: 2,
     color: '#fbf7f5',
   },
   inSightViews: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
     display: 'flex',
     flexDirection: 'row',
@@ -191,7 +195,7 @@ const styles = StyleSheet.create({
     // marginVertical: 2,
   },
   inSightViews2: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
     display: 'flex',
     justifyContent: 'space-around',
@@ -200,7 +204,7 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   maxView: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
@@ -223,7 +227,7 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   weatherKeyView: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
@@ -231,15 +235,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   weatherValueBox: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
   },
   weatherValueBoxEarth: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
   },
   weatherValueText: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
     fontSize: 17,
     color: '#fbf7f5',
@@ -249,22 +253,26 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
     color: '#fbf7f5',
+    letterSpacing: 2,
+    textAlign: 'center',
   },
   minMultipleText: {
     fontWeight: 'normal',
     fontSize: 13,
     color: '#fbf7f5',
+    textAlign: 'center',
   },
   keyValueBox: {
     // borderColor: 'white',
     borderWidth: 1,
   },
   keyValueText: {
-    borderColor: 'white',
+    // borderColor: 'white',
     borderWidth: 1,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
     color: '#fbf7f5',
+    letterSpacing: 2,
   },
 });
