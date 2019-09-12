@@ -63,25 +63,25 @@ export default class CuriosityComponent extends Component {
           startDate = day.terrestrial_date.substring(6, 7);
           midDate = day.terrestrial_date.substring(7, 8);
           endDate = day.terrestrial_date.substring(8, 10);
-          day.terrestrial_date =
-            '     ' + startDate + ' ' + midDate + ' ' + endDate;
+          day.terrestrial_date = startDate + midDate + endDate;
           return (
-            <View style={styles.curiosityViews} key={index}>
-              <View style={styles.weatherValueBox}>
-                <Text style={styles.weatherValueText}>{day.sol}</Text>
-              </View>
-              <View style={styles.weatherValueBoxEarth}>
-                <Text style={styles.weatherValueText}>
-                  {day.terrestrial_date}
-                </Text>
-              </View>
-              <View style={styles.weatherValueBox}>
-                <Text style={styles.maxMultipleText}>
-                  {day.max_temp}
-                  {' ' + ' '}
-                  <Text style={styles.minMultipleText}>{day.min_temp}</Text>
-                </Text>
-                {/* <Text style={styles.weatherValueText}>{day.min_temp}</Text> */}
+            <View style={styles.flexToColumn} key={index}>
+              <View style={styles.flexToRow}>
+                <View style={styles.informationViews}>
+                  <Text style={styles.weatherValueText}>{day.sol}</Text>
+                </View>
+                <View style={styles.informationViews}>
+                  <Text style={styles.weatherValueText}>
+                    {day.terrestrial_date}
+                  </Text>
+                </View>
+                <View style={styles.informationViewTemperature}>
+                  <Text style={styles.maxMultipleText}>
+                    {day.max_temp}
+                    {'  '}
+                    <Text style={styles.minMultipleText}>{day.min_temp}</Text>
+                  </Text>
+                </View>
               </View>
             </View>
           );
@@ -116,57 +116,79 @@ export default class CuriosityComponent extends Component {
           <View>
             <Text style={styles.currentLocationText}>Gale Crater</Text>
           </View>
-          <View style={styles.weatherKeyView}>
-            <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}> Sol</Text>
+          <View style={styles.flexToColumn}>
+            <View style={styles.flexToRow}>
+              <View style={styles.keyValuesView}>
+                <Text style={styles.keyValueText}>Sol</Text>
+              </View>
+              <View style={styles.keyValuesView}>
+                <Text style={styles.keyValueText}>Earth</Text>
+              </View>
+              <View style={styles.keyValuesView}>
+                <Text style={styles.keyValueText}>H / L</Text>
+              </View>
             </View>
-            <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}> Earth</Text>
-            </View>
-            <View style={styles.keyValueBox}>
-              <Text style={styles.keyValueText}>H // L </Text>
-            </View>
+            {curiosityWeather}
           </View>
-          {curiosityWeather}
         </View>
       </FadeInView>
     );
   }
 }
 const styles = StyleSheet.create({
+  flexToColumn: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  flexToRow: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  informationViews: {
+    height: 26,
+    width: 75,
+  },
+  informationViewTemperature: {
+    height: 26,
+    width: 77,
+  },
+  keyValuesView: {
+    height: 32,
+    width: 77,
+  },
   curiosityContainer: {
-    borderColor: 'gold',
-    borderWidth: 2,
+    // borderColor: 'white',
+    // borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
-    borderColor: 'black',
-    backgroundColor: 'blue',
-    borderWidth: 1,
+    // borderColor: 'white',
+    // borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
   },
   currentLocationText: {
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 25,
+    fontSize: 27,
     padding: 18,
     letterSpacing: 2,
     color: '#fbf7f5',
   },
-  curiosityViews: {
-    borderColor: 'black',
-    borderWidth: 1,
+  inSightViews: {
+    // borderColor: 'white',
+    // borderWidth: 1,
     display: 'flex',
-    alignItems: 'center',
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-around',
-    marginVertical: 2,
+    // marginVertical: 2,
   },
   maxView: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'white',
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -175,6 +197,7 @@ const styles = StyleSheet.create({
   seasonText: {
     // textDecorationLine: 'underline',
     fontSize: 16,
+    textTransform: 'capitalize',
     color: '#fbf7f5',
   },
   maxSingleText: {
@@ -187,42 +210,52 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
   },
   weatherKeyView: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'white',
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   weatherValueBox: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'white',
+    // borderWidth: 1,
   },
   weatherValueBoxEarth: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'white',
+    // borderWidth: 1,
   },
   weatherValueText: {
+    // borderColor: 'white',
+    // borderWidth: 1,
     fontSize: 17,
     color: '#fbf7f5',
+    textAlign: 'center',
   },
   maxMultipleText: {
     fontWeight: 'bold',
     fontSize: 16,
     color: '#fbf7f5',
+    letterSpacing: 2,
+    textAlign: 'center',
   },
   minMultipleText: {
     fontWeight: 'normal',
+    fontSize: 13,
     color: '#fbf7f5',
+    textAlign: 'center',
   },
   keyValueBox: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'white',
+    // borderWidth: 1,
   },
   keyValueText: {
+    // borderColor: 'white',
+    // borderWidth: 1,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
     color: '#fbf7f5',
+    letterSpacing: 2,
   },
 });

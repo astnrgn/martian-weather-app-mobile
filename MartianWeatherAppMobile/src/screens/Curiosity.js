@@ -37,8 +37,8 @@ export default class Curiosity extends Component {
 }
 const styles = StyleSheet.create({
   curiosityPage: {
-    borderColor: 'black',
-    borderWidth: 3,
+    // borderColor: 'black',
+    // borderWidth: 3,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

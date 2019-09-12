@@ -125,13 +125,13 @@ export default class InSightComponent extends Component {
           </View>
           <View style={styles.flexToColumn}>
             <View style={styles.flexToRow}>
-              <View style={styles.informationViews}>
+              <View style={styles.keyValuesView}>
                 <Text style={styles.keyValueText}>Sol</Text>
               </View>
-              <View style={styles.informationViews}>
+              <View style={styles.keyValuesView}>
                 <Text style={styles.keyValueText}>Earth</Text>
               </View>
-              <View style={styles.informationViews}>
+              <View style={styles.keyValuesView}>
                 <Text style={styles.keyValueText}>H / L</Text>
               </View>
             </View>
@@ -153,22 +153,26 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   informationViews: {
-    height: 40,
+    height: 26,
     width: 75,
   },
   informationViewTemperature: {
-    height: 40,
+    height: 26,
+    width: 77,
+  },
+  keyValuesView: {
+    height: 32,
     width: 77,
   },
   inSightContainer: {
     // borderColor: 'white',
-    borderWidth: 2,
+    // borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
   },
@@ -182,7 +186,7 @@ const styles = StyleSheet.create({
   },
   inSightViews: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -191,7 +195,7 @@ const styles = StyleSheet.create({
   },
   maxView: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -214,7 +218,7 @@ const styles = StyleSheet.create({
   },
   weatherKeyView: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
@@ -222,15 +226,15 @@ const styles = StyleSheet.create({
   },
   weatherValueBox: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   weatherValueBoxEarth: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   weatherValueText: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
     fontSize: 17,
     color: '#fbf7f5',
     textAlign: 'center',
@@ -250,11 +254,11 @@ const styles = StyleSheet.create({
   },
   keyValueBox: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   keyValueText: {
     // borderColor: 'white',
-    borderWidth: 1,
+    // borderWidth: 1,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
