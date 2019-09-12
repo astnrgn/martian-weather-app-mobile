@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, {Component, useState, useEffect} from 'react';
 import {
   StyleSheet,
+  Animated,
   TouchableOpacity,
   Button,
   View,
@@ -8,6 +9,27 @@ import {
   ImageBackground,
 } from 'react-native';
 import CuriosityComponent from '../components/Curiosity';
+
+const FadeInView = props => {
+  const [fadeAdmin] = useState(new Animated.Value(0)); // Initial value for opacity: 0
+
+  React.useEffect(() => {
+    Animated.timing(fadeAdmin, {
+      toValue: 1,
+      duration: 1000,
+    }).start();
+  }, []);
+
+  return (
+    <Animated.View // Special animatable View
+      style={{
+        ...props.style,
+        opacity: fadeAdmin, // Bind opacity to animated value
+      }}>
+      {props.children}
+    </Animated.View>
+  );
+};
 
 export default class Curiosity extends React.Component {
   static navigationOptions = {
@@ -19,7 +41,7 @@ export default class Curiosity extends React.Component {
         source={require('../images/rotatingMars.gif')}
         style={styles.backgroundImage}>
         <View style={styles.curiosityPage}>
-          <View style={styles.curiosityBox}>
+          <FadeInView style={styles.curiosityBox}>
             {/* <TouchableOpacity>
             <Text
               style={styles.homeButton}
@@ -28,7 +50,7 @@ export default class Curiosity extends React.Component {
             </Text>
           </TouchableOpacity> */}
             <CuriosityComponent></CuriosityComponent>
-          </View>
+          </FadeInView>
         </View>
       </ImageBackground>
     );
