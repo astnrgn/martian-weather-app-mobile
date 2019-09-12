@@ -123,18 +123,20 @@ export default class InSightComponent extends Component {
           <View>
             <Text style={styles.currentLocationText}>Elysium Planitia</Text>
           </View>
-          <View style={styles.weatherKeyView}>
-            <View>
-              <Text style={styles.keyValueText}>Sol</Text>
+          <View style={styles.martian}>
+            <View style={styles.earth}>
+              <View style={styles.divs}>
+                <Text style={styles.keyValueText}>Sol</Text>
+              </View>
+              <View style={styles.divs}>
+                <Text style={styles.keyValueText}>Earth</Text>
+              </View>
+              <View style={styles.divs}>
+                <Text style={styles.keyValueText}>H/L</Text>
+              </View>
             </View>
-            <View>
-              <Text style={styles.keyValueText}>Earth</Text>
-            </View>
-            <View>
-              <Text style={styles.keyValueText}>H/L</Text>
-            </View>
+            {inSightWeather}
           </View>
-          {inSightWeather}
         </View>
       </FadeInView>
     );
@@ -144,7 +146,6 @@ const styles = StyleSheet.create({
   martian: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
   },
   earth: {
     display: 'flex',
@@ -152,7 +153,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
   },
   divs: {
-    height: 50,
+    height: 40,
     width: 75,
   },
   // martian: {
