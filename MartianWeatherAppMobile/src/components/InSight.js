@@ -74,19 +74,21 @@ export default class InSightComponent extends Component {
         endDate = day.earthDate.substring(8, 10);
         day.earthDate = startDate + midDate + endDate;
         return (
-          <View>
-            <View>
-              <Text style={styles.weatherValueText}>{day.martianDate}</Text>
-            </View>
-            <View>
-              <Text style={styles.weatherValueText}>{day.earthDate}</Text>
-            </View>
-            <View>
-              <Text style={styles.maxMultipleText}>
-                {day.maxTemp}
-                {' ' + ' '}
-                <Text style={styles.minMultipleText}>{day.minTemp}</Text>
-              </Text>
+          <View style={styles.martian} key={index}>
+            <View style={styles.earth}>
+              <View style={styles.divs}>
+                <Text style={styles.weatherValueText}>{day.martianDate}</Text>
+              </View>
+              <View style={styles.divs}>
+                <Text style={styles.weatherValueText}>{day.earthDate}</Text>
+              </View>
+              <View style={styles.divs}>
+                <Text style={styles.maxMultipleText}>
+                  {day.maxTemp}
+                  {' ' + ' '}
+                  <Text style={styles.minMultipleText}>{day.minTemp}</Text>
+                </Text>
+              </View>
             </View>
           </View>
         );
@@ -132,13 +134,31 @@ export default class InSightComponent extends Component {
               <Text style={styles.keyValueText}>H/L</Text>
             </View>
           </View>
-          <View style={styles.inSightViews}>{inSightWeather}</View>
+          {inSightWeather}
         </View>
       </FadeInView>
     );
   }
 }
 const styles = StyleSheet.create({
+  martian: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+  earth: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  divs: {
+    height: 50,
+    width: 75,
+  },
+  // martian: {
+  //   display: 'flex',
+  //   flexDirection: 'row',
+  // },
   inSightContainer: {
     borderColor: 'white',
     borderWidth: 2,
