@@ -8,6 +8,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -20,7 +24,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="517" />
-    <option name="y" value="48" />
+    <option name="y" value="23" />
     <option name="width" value="903" />
     <option name="height" value="747" />
   </component>
@@ -86,11 +90,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="517" y="48" width="903" height="747" extended-state="0" />
+    <frame x="517" y="23" width="903" height="747" extended-state="0" />
     <layout>
       <window_info id="Build Variants" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.52729386" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.52729386" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
