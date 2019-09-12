@@ -135,15 +135,15 @@ export default class CuriosityComponent extends Component {
 }
 const styles = StyleSheet.create({
   curiosityContainer: {
-    borderColor: 'gold',
+    // borderColor: 'gold',
     borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
-    borderColor: 'black',
-    backgroundColor: 'white',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // backgroundColor: 'white',
+    // borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
   },
@@ -153,10 +153,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     padding: 18,
     letterSpacing: 2,
+    color: '#fbf7f5',
   },
   curiosityViews: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
@@ -164,8 +165,8 @@ const styles = StyleSheet.create({
     marginVertical: 2,
   },
   maxView: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
@@ -174,47 +175,54 @@ const styles = StyleSheet.create({
   seasonText: {
     // textDecorationLine: 'underline',
     fontSize: 16,
+    color: '#fbf7f5',
   },
   maxSingleText: {
     fontWeight: 'bold',
     fontSize: 53,
+    color: '#fbf7f5',
   },
   minSingleText: {
     fontSize: 18,
+    color: '#fbf7f5',
   },
   weatherKeyView: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
   weatherValueBox: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // borderWidth: 1,
   },
   weatherValueBoxEarth: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // borderWidth: 1,
   },
   weatherValueText: {
     fontSize: 17,
+    color: '#fbf7f5',
   },
   maxMultipleText: {
     fontWeight: 'bold',
     fontSize: 14,
+    color: '#fbf7f5',
   },
   minMultipleText: {
     fontWeight: 'normal',
+    color: '#fbf7f5',
   },
   keyValueBox: {
-    borderColor: 'black',
-    borderWidth: 1,
+    // borderColor: 'black',
+    // borderWidth: 1,
   },
   keyValueText: {
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
+    color: '#fbf7f5',
   },
 });

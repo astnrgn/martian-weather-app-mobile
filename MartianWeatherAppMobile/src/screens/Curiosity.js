@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'IBM Plex Sans',
-    backgroundColor: 'cyan',
+    // backgroundColor: 'cyan',
   },
   backgroundImage: {
     width: '100%',
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     borderWidth: 3,
   },
   curiosityBox: {
-    borderColor: 'red',
-    borderWidth: 1,
+    // borderColor: 'red',
+    // borderWidth: 1,
     height: '100%',
     width: '100%',
   },
