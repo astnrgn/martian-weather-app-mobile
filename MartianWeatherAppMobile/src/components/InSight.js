@@ -74,15 +74,15 @@ export default class InSightComponent extends Component {
         endDate = day.earthDate.substring(8, 10);
         day.earthDate = startDate + midDate + endDate;
         return (
-          <View style={styles.martian} key={index}>
-            <View style={styles.earth}>
-              <View style={styles.divs}>
+          <View style={styles.flexToColumn} key={index}>
+            <View style={styles.flexToRow}>
+              <View style={styles.informationViews}>
                 <Text style={styles.weatherValueText}>{day.martianDate}</Text>
               </View>
-              <View style={styles.divs}>
+              <View style={styles.informationViews}>
                 <Text style={styles.weatherValueText}>{day.earthDate}</Text>
               </View>
-              <View style={styles.divs2}>
+              <View style={styles.informationViewTemperature}>
                 <Text style={styles.maxMultipleText}>
                   {day.maxTemp}
                   {'  '}
@@ -123,15 +123,15 @@ export default class InSightComponent extends Component {
           <View>
             <Text style={styles.currentLocationText}>Elysium Planitia</Text>
           </View>
-          <View style={styles.martian}>
-            <View style={styles.earth}>
-              <View style={styles.divs}>
+          <View style={styles.flexToColumn}>
+            <View style={styles.flexToRow}>
+              <View style={styles.informationViews}>
                 <Text style={styles.keyValueText}>Sol</Text>
               </View>
-              <View style={styles.divs}>
+              <View style={styles.informationViews}>
                 <Text style={styles.keyValueText}>Earth</Text>
               </View>
-              <View style={styles.divs}>
+              <View style={styles.informationViews}>
                 <Text style={styles.keyValueText}>H / L</Text>
               </View>
             </View>
@@ -143,27 +143,23 @@ export default class InSightComponent extends Component {
   }
 }
 const styles = StyleSheet.create({
-  martian: {
+  flexToColumn: {
     display: 'flex',
     flexDirection: 'column',
   },
-  earth: {
+  flexToRow: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
   },
-  divs: {
+  informationViews: {
     height: 40,
     width: 75,
   },
-  divs2: {
+  informationViewTemperature: {
     height: 40,
     width: 77,
   },
-  // martian: {
-  //   display: 'flex',
-  //   flexDirection: 'row',
-  // },
   inSightContainer: {
     // borderColor: 'white',
     borderWidth: 2,
@@ -172,7 +168,6 @@ const styles = StyleSheet.create({
   },
   currentInformation: {
     // borderColor: 'white',
-    // backgroundColor: 'blue',
     borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
@@ -194,15 +189,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     // marginVertical: 2,
   },
-  inSightViews2: {
-    // borderColor: 'white',
-    borderWidth: 1,
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexDirection: 'row',
-    marginVertical: 2,
-  },
   maxView: {
     // borderColor: 'white',
     borderWidth: 1,
@@ -212,7 +198,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   seasonText: {
-    textDecorationLine: 'underline',
+    // textDecorationLine: 'underline',
     fontSize: 16,
     textTransform: 'capitalize',
     color: '#fbf7f5',

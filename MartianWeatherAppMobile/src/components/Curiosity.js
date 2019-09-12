@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   seasonText: {
-    textDecorationLine: 'underline',
+    // textDecorationLine: 'underline',
     fontSize: 16,
     color: '#fbf7f5',
   },
