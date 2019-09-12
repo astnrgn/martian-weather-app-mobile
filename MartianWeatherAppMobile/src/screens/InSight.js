@@ -17,7 +17,7 @@ export default class InSight extends Component {
   render() {
     return (
       <ImageBackground
-        source={require('../images/spaceLoop.gif')}
+        source={require('../images/mars.jpeg')}
         style={styles.backgroundImage}>
         <View style={styles.inSightPage}>
           <View style={styles.inSightBox}>
