@@ -26,39 +26,52 @@ const FadeInView = props => {
 export default class HomeComponent extends Component {
   render() {
     return (
-      <FadeInView>
+      <FadeInView style={styles.flexContent}>
         <View style={styles.aboutContainer}>
           <Text style={styles.aboutDescription}>
             Fourth Rock Weather is a martian weather application using open
             source data provided by NASA
           </Text>
         </View>
-        <View style={styles.flexToColumn}>
-          <View style={styles.keyContainer}>
-            <Text style={styles.keyTitle}>Key</Text>
-            <View>
-              <Text>Sol: Number of Martian Days since landing on Mars</Text>
-              <Text>Earth: Corresponding date on Earth</Text>
-              <Text>
-                H / F: High and Low temperatures for the given Sol in Fahrenheit
+        <View>
+          <Text style={styles.keyTitle}>Key</Text>
+          <View style={styles.flexy}>
+            <View style={styles.borderz}>
+              <Text style={styles.keys2}>Sol: </Text>
+              <Text style={styles.keys3}>
+                Number of Martian Days since landing
+              </Text>
+            </View>
+            <View style={styles.borderz}>
+              <View>
+                <Text style={styles.keys2}>Earth: </Text>
+              </View>
+              <View>
+                <Text style={styles.keys3}>Corresponding Date on Earth</Text>
+              </View>
+            </View>
+            <View style={styles.borderz}>
+              <Text style={styles.keys2}>H / F: </Text>
+              <Text style={styles.keys3}>
+                High and Low temperatures in Farenheight
               </Text>
             </View>
           </View>
-          <View>
-            <Text>Learn More About:</Text>
-            <Text
-              style={{color: 'blue'}}
-              onPress={() => Linking.openURL('https://mars.jpl.nasa.gov/msl/')}>
-              Curiosity
-            </Text>
-            <Text
-              style={{color: 'blue'}}
-              onPress={() =>
-                Linking.openURL('https://mars.nasa.gov/insight/weather/')
-              }>
-              InSight
-            </Text>
-          </View>
+        </View>
+        <View style={styles.learnMoreContainer}>
+          <Text style={styles.learnMoreTitle}>Learn More About:</Text>
+          <Text
+            style={styles.learnMoreLinks}
+            onPress={() => Linking.openURL('https://mars.jpl.nasa.gov/msl/')}>
+            - Curiosity -
+          </Text>
+          <Text
+            style={styles.learnMoreLinks}
+            onPress={() =>
+              Linking.openURL('https://mars.nasa.gov/insight/weather/')
+            }>
+            - InSight -
+          </Text>
         </View>
       </FadeInView>
     );
@@ -66,10 +79,39 @@ export default class HomeComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-  flexToColumn: {
+  flexContent: {
     flex: 1,
-    justifyContent: 'space-evenly',
-    fontFamily: 'IBM Plex Sans',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    width: '100%',
+    borderWidth: 2,
+    borderColor: 'red',
+  },
+  flexy: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  borderz: {
+    borderWidth: 2,
+    borderColor: '#fbf7f5',
+    display: 'flex',
+    flexDirection: 'row',
+    alignContent: 'center',
+    paddingVertical: 10,
+  },
+  keys2: {
+    color: '#fbf7f5',
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'left',
+  },
+  keys3: {
+    color: '#fbf7f5',
+    fontWeight: '600',
+    fontSize: 18,
+    textAlign: 'left',
   },
   aboutContainer: {
     borderWidth: 2,
@@ -79,18 +121,31 @@ const styles = StyleSheet.create({
   aboutDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 25,
+    fontSize: 22,
     textAlign: 'center',
-  },
-  keyContainer: {
-    borderWidth: 2,
-    borderColor: '#fbf7f5',
-    padding: '5%',
   },
   keyTitle: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 25,
+    fontSize: 28,
     textAlign: 'center',
+  },
+  learnMoreContainer: {
+    borderWidth: 2,
+    borderColor: '#fbf7f5',
+    padding: '5%',
+  },
+  learnMoreTitle: {
+    color: '#fbf7f5',
+    fontWeight: '600',
+    fontSize: 20,
+    textAlign: 'center',
+  },
+  learnMoreLinks: {
+    color: '#fbf7f5',
+    fontWeight: '600',
+    fontSize: 20,
+    textAlign: 'center',
+    marginTop: '5%',
   },
 });

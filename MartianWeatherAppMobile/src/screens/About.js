@@ -37,26 +37,15 @@ export default class About extends Component {
 }
 const styles = StyleSheet.create({
   aboutPage: {
-    // borderColor: 'black',
+    // borderColor: 'gold',
     // borderWidth: 3,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     fontFamily: 'IBM Plex Sans',
-    // backgroundColor: 'cyan',
   },
   backgroundImage: {
     width: '100%',
     height: '100%',
-  },
-  homeButton: {
-    borderColor: 'green',
-    borderWidth: 3,
-  },
-  curiosityBox: {
-    // borderColor: 'red',
-    // borderWidth: 1,
-    height: '100%',
-    width: '100%',
   },
 });
