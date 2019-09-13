@@ -39,9 +39,11 @@ export default class Home extends Component {
                   </Text>
                 </TouchableOpacity>
               </View>
-              <View>
+              <View style={styles.aboutContainer}>
                 <TouchableOpacity>
-                  <Text onPress={() => this.props.navigation.navigate('About')}>
+                  <Text
+                    style={styles.aboutContents}
+                    onPress={() => this.props.navigation.navigate('About')}>
                     [ About ]
                   </Text>
                 </TouchableOpacity>
@@ -93,5 +95,16 @@ const styles = StyleSheet.create({
     fontSize: 35,
     color: '#fbf7f5',
     textAlign: 'center',
+  },
+  aboutContainer: {
+    marginTop: '5%',
+    marginHorizontal: '25%',
+    // borderWidth: 1,
+    // borderColor: '#fbf7f5',
+  },
+  aboutContents: {
+    color: '#fbf7f5',
+    textAlign: 'center',
+    fontSize: 15,
   },
 });
