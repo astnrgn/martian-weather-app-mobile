@@ -1,19 +1,11 @@
 import React, {Component, useState} from 'react';
-import {
-  StyleSheet,
-  Animated,
-  TouchableOpacity,
-  Button,
-  View,
-  Text,
-  ImageBackground,
-} from 'react-native';
+import {StyleSheet, Animated, View, Text} from 'react-native';
 import axios from 'axios';
 const inSightSearchUrl =
   'https://api.nasa.gov/insight_weather/?api_key=xM37sJTj9e3rcHJysfB3KnZrZk8aXmJH7BGzTzZd&feedtype=json&ver=1.0';
 
 const FadeInView = props => {
-  const [fadeAdmin] = useState(new Animated.Value(0)); // Initial value for opacity: 0
+  const [fadeAdmin] = useState(new Animated.Value(0));
 
   React.useEffect(() => {
     Animated.timing(fadeAdmin, {
@@ -24,10 +16,10 @@ const FadeInView = props => {
   }, []);
 
   return (
-    <Animated.View // Special animatable View
+    <Animated.View
       style={{
         ...props.style,
-        opacity: fadeAdmin, // Bind opacity to animated value
+        opacity: fadeAdmin,
       }}>
       {props.children}
     </Animated.View>
@@ -165,14 +157,10 @@ const styles = StyleSheet.create({
     width: 77,
   },
   inSightContainer: {
-    // borderColor: 'white',
-    // borderWidth: 2,
     flex: 1,
     justifyContent: 'space-between',
   },
   currentInformation: {
-    // borderColor: 'white',
-    // borderWidth: 1,
     paddingBottom: 10,
     paddingHorizontal: 15,
   },
@@ -184,25 +172,13 @@ const styles = StyleSheet.create({
     letterSpacing: 2,
     color: '#fbf7f5',
   },
-  inSightViews: {
-    // borderColor: 'white',
-    // borderWidth: 1,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    // marginVertical: 2,
-  },
   maxView: {
-    // borderColor: 'white',
-    // borderWidth: 1,
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
     marginTop: 40,
   },
   seasonText: {
-    // textDecorationLine: 'underline',
     fontSize: 16,
     textTransform: 'capitalize',
     color: '#fbf7f5',
@@ -216,25 +192,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#fbf7f5',
   },
-  weatherKeyView: {
-    // borderColor: 'white',
-    // borderWidth: 1,
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  weatherValueBox: {
-    // borderColor: 'white',
-    // borderWidth: 1,
-  },
-  weatherValueBoxEarth: {
-    // borderColor: 'white',
-    // borderWidth: 1,
-  },
   weatherValueText: {
-    // borderColor: 'white',
-    // borderWidth: 1,
     fontSize: 17,
     color: '#fbf7f5',
     textAlign: 'center',
@@ -252,13 +210,7 @@ const styles = StyleSheet.create({
     color: '#fbf7f5',
     textAlign: 'center',
   },
-  keyValueBox: {
-    // borderColor: 'white',
-    // borderWidth: 1,
-  },
   keyValueText: {
-    // borderColor: 'white',
-    // borderWidth: 1,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',

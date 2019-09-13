@@ -1,13 +1,5 @@
 import React, {Component} from 'react';
-import {
-  StyleSheet,
-  Animated,
-  TouchableOpacity,
-  Button,
-  View,
-  Text,
-  ImageBackground,
-} from 'react-native';
+import {StyleSheet, View, ImageBackground} from 'react-native';
 import AboutComponent from '../components/About';
 
 export default class About extends Component {
@@ -21,13 +13,6 @@ export default class About extends Component {
         style={styles.backgroundImage}>
         <View style={styles.aboutPage}>
           <View style={styles.aboutBox}>
-            {/* <TouchableOpacity>
-            <Text
-              style={styles.homeButton}
-              onPress={() => this.props.navigation.navigate('Home')}>
-              - Home -
-            </Text>
-          </TouchableOpacity> */}
             <AboutComponent></AboutComponent>
           </View>
         </View>
@@ -37,8 +22,6 @@ export default class About extends Component {
 }
 const styles = StyleSheet.create({
   aboutPage: {
-    // borderColor: 'gold',
-    // borderWidth: 3,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',

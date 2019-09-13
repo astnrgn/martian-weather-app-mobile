@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa2beaac-11c6-4948-af25-d4aacd5d2b73" name="Default Changelist" comment="" />
+    <list default="true" id="fa2beaac-11c6-4948-af25-d4aacd5d2b73" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/components/Curiosity.js" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/src/components/Curiosity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/components/InSight.js" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/src/components/InSight.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/images/curiosity.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/images/greenMars.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/images/rotatingMars.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/src/images/spaceLoop.gif" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +41,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -57,7 +65,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">

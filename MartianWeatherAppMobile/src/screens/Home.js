@@ -67,8 +67,6 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   centerBox: {
-    // borderWidth: 2,
-    // borderColor: 'red',
     width: '100%',
     flex: 1,
     alignItems: 'center',
@@ -99,8 +97,6 @@ const styles = StyleSheet.create({
   aboutContainer: {
     marginTop: '5%',
     marginHorizontal: '25%',
-    // borderWidth: 1,
-    // borderColor: '#fbf7f5',
   },
   aboutContents: {
     color: '#fbf7f5',

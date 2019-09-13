@@ -2,8 +2,7 @@ import React, {Component, useState} from 'react';
 import {StyleSheet, Animated, Text, View, Linking} from 'react-native';
 
 const FadeInView = props => {
-  const [fadeAdmin] = useState(new Animated.Value(0)); // Initial value for opacity: 0
-
+  const [fadeAdmin] = useState(new Animated.Value(0));
   React.useEffect(() => {
     Animated.timing(fadeAdmin, {
       toValue: 1,
@@ -13,10 +12,10 @@ const FadeInView = props => {
   }, []);
 
   return (
-    <Animated.View // Special animatable View
+    <Animated.View
       style={{
         ...props.style,
-        opacity: fadeAdmin, // Bind opacity to animated value
+        opacity: fadeAdmin,
       }}>
       {props.children}
     </Animated.View>
