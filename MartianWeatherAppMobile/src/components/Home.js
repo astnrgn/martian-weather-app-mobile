@@ -25,12 +25,6 @@ const styles = StyleSheet.create({
   titleDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 36,
-  },
-  superscript: {
-    color: '#fbf7f5',
-    fontWeight: '600',
-    fontSize: 21,
-    lineHeight: 21,
+    fontSize: 40,
   },
 });

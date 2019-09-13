@@ -28,7 +28,7 @@ export default class Curiosity extends Component {
               - Home -
             </Text>
           </TouchableOpacity> */}
-            <CuriosityComponent></CuriosityComponent>
+            {/* <CuriosityComponent></CuriosityComponent> */}
           </View>
         </View>
       </ImageBackground>
