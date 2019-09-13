@@ -6,8 +6,7 @@ export default class HomeComponent extends Component {
     return (
       <View>
         <View style={styles.titleContainer}>
-          <Text style={styles.titleDescription}>Fourth </Text>
-          <Text style={styles.titleDescription}>Rock Weather</Text>
+          <Text style={styles.titleDescription}>Fourth Rock Weather</Text>
         </View>
       </View>
     );
@@ -17,11 +16,11 @@ export default class HomeComponent extends Component {
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
-    padding: '5%',
+    width: '100%',
   },
   titleDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 35,
+    fontSize: 33,
   },
 });

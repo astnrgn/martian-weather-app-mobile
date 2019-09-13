@@ -29,8 +29,10 @@ export default class HomeComponent extends Component {
         <View style={styles.aboutContainer}>
           <View>
             <Text style={styles.aboutDescription}>
-              Fourth Rock Weather is a martian weather application using open
-              source data provided by NASA
+              Fourth Rock Weather is a martian weather application
+            </Text>
+            <Text style={styles.aboutDescription}>
+              using open source data provided by NASA
             </Text>
           </View>
         </View>
@@ -95,7 +97,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   centerKeys: {
-    display: 'flex',
     flexDirection: 'row',
     alignContent: 'center',
     justifyContent: 'center',
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   aboutDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 22,
+    fontSize: 20,
     textAlign: 'center',
   },
   learnMoreContainer: {
