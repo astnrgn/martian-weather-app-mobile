@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa2beaac-11c6-4948-af25-d4aacd5d2b73" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/ios/MartianWeatherAppMobile/Images.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/ios/MartianWeatherAppMobile/Images.xcassets/AppIcon.appiconset/Contents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MartianWeatherAppMobile/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MartianWeatherAppMobile/android/gradle.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +38,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -62,9 +63,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
