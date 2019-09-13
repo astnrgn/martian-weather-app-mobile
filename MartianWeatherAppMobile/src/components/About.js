@@ -27,10 +27,12 @@ export default class HomeComponent extends Component {
     return (
       <FadeInView style={styles.flexContent}>
         <View style={styles.aboutContainer}>
-          <Text style={styles.aboutDescription}>
-            Fourth Rock Weather is a martian weather application using open
-            source data provided by NASA
-          </Text>
+          <View>
+            <Text style={styles.aboutDescription}>
+              Fourth Rock Weather is a martian weather application using open
+              source data provided by NASA
+            </Text>
+          </View>
         </View>
         <View>
           <Text style={styles.keyTitle}>Key</Text>
@@ -114,11 +116,14 @@ const styles = StyleSheet.create({
   keyDescriptions: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 18.5,
+    fontSize: 16,
     textAlign: 'left',
   },
   aboutContainer: {
+    flex: 1,
     padding: '5%',
+    display: 'flex',
+    flexDirection: 'column',
   },
   aboutDescription: {
     color: '#fbf7f5',

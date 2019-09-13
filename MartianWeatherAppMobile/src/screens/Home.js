@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     padding: '1%',
   },
   curiosityContents: {
-    fontSize: 33,
+    fontSize: 30,
     color: '#fbf7f5',
     textAlign: 'center',
   },
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     padding: '1%',
   },
   insightContents: {
-    fontSize: 33,
+    fontSize: 30,
     color: '#fbf7f5',
     textAlign: 'center',
   },

@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
   titleDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 40,
+    fontSize: 35,
   },
 });
