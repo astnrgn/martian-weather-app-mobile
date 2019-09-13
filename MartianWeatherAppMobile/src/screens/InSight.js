@@ -28,7 +28,7 @@ export default class InSight extends Component {
               - Home -
             </Text>
           </TouchableOpacity> */}
-            {/* <InSightComponent></InSightComponent> */}
+            <InSightComponent></InSightComponent>
           </View>
         </View>
       </ImageBackground>

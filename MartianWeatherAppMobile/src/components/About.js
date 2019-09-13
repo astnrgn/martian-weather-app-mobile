@@ -7,7 +7,7 @@ const FadeInView = props => {
   React.useEffect(() => {
     Animated.timing(fadeAdmin, {
       toValue: 1,
-      duration: 1000,
+      duration: 1200,
       useNativeDriver: true,
     }).start();
   }, []);
@@ -35,29 +35,31 @@ export default class HomeComponent extends Component {
         </View>
         <View>
           <Text style={styles.keyTitle}>Key</Text>
-          <View style={styles.borderz}>
-            <View style={styles.titlez}>
-              <Text style={styles.keys2}>
+          <View style={styles.centerKeys}>
+            <View>
+              <Text style={styles.keyTitles}>
                 Sol:{' '}
-                <Text style={styles.keys3}>
+                <Text style={styles.keyDescriptions}>
                   Number of Martian Days since landing
                 </Text>
               </Text>
             </View>
           </View>
-          <View style={styles.borderz}>
-            <View style={styles.titlez}>
-              <Text style={styles.keys2}>
+          <View style={styles.centerKeys}>
+            <View>
+              <Text style={styles.keyTitles}>
                 Earth:{' '}
-                <Text style={styles.keys3}>Corresponding Date on Earth</Text>
+                <Text style={styles.keyDescriptions}>
+                  Corresponding Date on Earth
+                </Text>
               </Text>
             </View>
           </View>
-          <View style={styles.borderz}>
-            <View style={styles.titlez}>
-              <Text style={styles.keys2}>
+          <View style={styles.centerKeys}>
+            <View>
+              <Text style={styles.keyTitles}>
                 H / F:{' '}
-                <Text style={styles.keys3}>
+                <Text style={styles.keyDescriptions}>
                   High and Low temperatures in Fahrenheit
                 </Text>
               </Text>
@@ -90,41 +92,33 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-between',
     width: '100%',
-    // borderWidth: 2,
-    borderColor: 'red',
   },
-  borderz: {
-    // borderWidth: 2,
-    borderColor: '#fbf7f5',
+  centerKeys: {
     display: 'flex',
     flexDirection: 'row',
     alignContent: 'center',
     justifyContent: 'center',
     paddingVertical: 15,
   },
-  keys2: {
+  keyTitle: {
+    color: '#fbf7f5',
+    fontWeight: 'bold',
+    fontSize: 38,
+    textAlign: 'center',
+  },
+  keyTitles: {
     color: '#fbf7f5',
     fontWeight: 'bold',
     fontSize: 21,
     textAlign: 'left',
   },
-  keys3: {
+  keyDescriptions: {
     color: '#fbf7f5',
     fontWeight: '600',
     fontSize: 18.5,
     textAlign: 'left',
   },
-  titlez: {
-    // borderWidth: 2,
-    borderColor: '#fbf7f5',
-  },
-  descriptzz: {
-    // borderWidth: 2,
-    borderColor: '#fbf7f5',
-  },
   aboutContainer: {
-    // borderWidth: 2,
-    borderColor: '#fbf7f5',
     padding: '5%',
   },
   aboutDescription: {
@@ -133,20 +127,12 @@ const styles = StyleSheet.create({
     fontSize: 22,
     textAlign: 'center',
   },
-  keyTitle: {
-    color: '#fbf7f5',
-    fontWeight: 'bold',
-    fontSize: 38,
-    textAlign: 'center',
-  },
   learnMoreContainer: {
-    // borderWidth: 2,
-    borderColor: '#fbf7f5',
     padding: '5%',
   },
   learnMoreTitle: {
     color: '#fbf7f5',
-    fontWeight: '600',
+    fontWeight: 'bold',
     fontSize: 20,
     textAlign: 'center',
   },
