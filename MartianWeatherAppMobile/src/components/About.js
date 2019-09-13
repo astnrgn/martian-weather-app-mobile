@@ -26,12 +26,15 @@ const FadeInView = props => {
 export default class HomeComponent extends Component {
   render() {
     return (
-      <FadeInView>
+      <FadeInView style={styles.flexToColumn}>
         <View style={styles.aboutContainer}>
           <Text style={styles.aboutDescription}>
             Fourth Rock Weather is a martian weather application using open
             source data provided by NASA
           </Text>
+        </View>
+        <View style={styles.keyContainer}>
+          <Text style={styles.keyTitle}>Key</Text>
         </View>
       </FadeInView>
     );
@@ -39,6 +42,12 @@ export default class HomeComponent extends Component {
 }
 
 const styles = StyleSheet.create({
+  flexToColumn: {
+    display: "flex"
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: 'IBM Plex Sans',
+  },
   aboutContainer: {
     flexDirection: 'row',
     borderWidth: 2,
@@ -48,7 +57,19 @@ const styles = StyleSheet.create({
   aboutDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
-    fontSize: 35,
+    fontSize: 25,
+    textAlign: 'center',
+  },
+  keyContainer: {
+    flexDirection: 'row',
+    borderWidth: 2,
+    borderColor: '#fbf7f5',
+    padding: '5%',
+  },
+  keyTitle: {
+    color: '#fbf7f5',
+    fontWeight: '600',
+    fontSize: 25,
     textAlign: 'center',
   },
 });
