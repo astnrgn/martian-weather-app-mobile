@@ -6,7 +6,6 @@ import {
   Text,
   ImageBackground,
 } from 'react-native';
-import Shimmer from 'react-native-shimmer';
 import HomeComponent from '../components/Home';
 
 export default class Home extends Component {
@@ -24,26 +23,27 @@ export default class Home extends Component {
             <View>
               <View style={styles.curiosityContainer}>
                 <TouchableOpacity>
-                  <Shimmer>
-                    <Text
-                      style={styles.curiosityContents}
-                      onPress={() =>
-                        this.props.navigation.navigate('Curiosity')
-                      }>
-                      Curiosity Rover
-                    </Text>
-                  </Shimmer>
+                  <Text
+                    style={styles.curiosityContents}
+                    onPress={() => this.props.navigation.navigate('Curiosity')}>
+                    Curiosity Rover
+                  </Text>
                 </TouchableOpacity>
               </View>
               <View style={styles.insightContainer}>
                 <TouchableOpacity>
-                  <Shimmer>
-                    <Text
-                      style={styles.insightContents}
-                      onPress={() => this.props.navigation.navigate('InSight')}>
-                      InSight Lander
-                    </Text>
-                  </Shimmer>
+                  <Text
+                    style={styles.insightContents}
+                    onPress={() => this.props.navigation.navigate('InSight')}>
+                    InSight Lander
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View>
+                <TouchableOpacity>
+                  <Text onPress={() => this.props.navigation.navigate('About')}>
+                    [ About ]
+                  </Text>
                 </TouchableOpacity>
               </View>
             </View>

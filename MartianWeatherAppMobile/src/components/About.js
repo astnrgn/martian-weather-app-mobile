@@ -1,15 +1,12 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export default class HomeComponent extends Component {
   render() {
     return (
       <View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.titleDescription}>4</Text>
-          <Text style={styles.superscript}>th</Text>
-          <Text style={styles.titleDescription}> Rock Weather</Text>
+        <View style={styles.aboutContainer}>
+          <Text style={styles.aboutDescription}>About</Text>
         </View>
       </View>
     );
@@ -17,13 +14,13 @@ export default class HomeComponent extends Component {
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  aboutContainer: {
     flexDirection: 'row',
     borderWidth: 2,
     borderColor: '#fbf7f5',
     padding: '5%',
   },
-  titleDescription: {
+  aboutDescription: {
     color: '#fbf7f5',
     fontWeight: '600',
     fontSize: 42,
