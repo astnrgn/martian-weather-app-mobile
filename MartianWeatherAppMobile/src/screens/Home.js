@@ -77,11 +77,11 @@ const styles = StyleSheet.create({
   curiosityContainer: {
     borderWidth: 1,
     borderColor: '#fbf7f5',
-    marginTop: '45%',
+    marginTop: '50%',
     padding: '1%',
   },
   curiosityContents: {
-    fontSize: 35,
+    fontSize: 33,
     color: '#fbf7f5',
     textAlign: 'center',
   },
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     padding: '1%',
   },
   insightContents: {
-    fontSize: 35,
+    fontSize: 33,
     color: '#fbf7f5',
     textAlign: 'center',
   },
