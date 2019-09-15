@@ -57,8 +57,8 @@ https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0
 ## Built and Deployed With
 
 - [JavaScript](https://www.javascript.com/)
-- [React](https://reactjs.org)
-- [Surge](https://surge.sh/)
+- [React Native](https://facebook.github.io/react-native/)
+- [Google Play](https://play.google.com/store?hl=en_US)
 
 <br/><br/>
 
