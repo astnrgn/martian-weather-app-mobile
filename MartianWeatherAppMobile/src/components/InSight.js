@@ -61,10 +61,11 @@ export default class InSightComponent extends Component {
       if (index <= 6) {
         day.minTemp = Math.round(1.8 * day.minTemp + 32);
         day.maxTemp = Math.round(1.8 * day.maxTemp + 32);
+        zeroDate = day.earthDate.substring(5, 6);
         startDate = day.earthDate.substring(6, 7);
         midDate = day.earthDate.substring(7, 8);
         endDate = day.earthDate.substring(8, 10);
-        day.earthDate = startDate + midDate + endDate;
+        day.earthDate = zeroDate + startDate + midDate + endDate;
         return (
           <View style={styles.flexToColumn} key={index}>
             <View style={styles.flexToRow}>
