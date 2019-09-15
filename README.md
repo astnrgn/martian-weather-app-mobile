@@ -10,11 +10,11 @@ Updates to the Curiosity database can occur daily, while the InSight database is
 
 <br/><br/>
 
-<img align="center" src="examples/mobileApplication.png" width="100%" height="100%">
+<img align="center" src="examples/mobileApplication.png" width="50%" height="50%">
 
 <br/><br/>
 
-<img align="center" src="examples/weatherModule.png" width="100%" height="100%">
+<img align="center" src="examples/weatherModule.png" width="50%" height="50%">
 
 <br/><br/>
 
