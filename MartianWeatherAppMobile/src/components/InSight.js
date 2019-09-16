@@ -59,6 +59,8 @@ export default class InSightComponent extends Component {
   render() {
     let inSightWeather = this.state.inSightWeatherData.map((day, index) => {
       if (index <= 6) {
+        day.minTemp = Math.round(day.minTemp);
+        day.maxTemp = Math.round(day.maxTemp);
         zeroDate = day.earthDate.substring(5, 6);
         startDate = day.earthDate.substring(6, 7);
         midDate = day.earthDate.substring(7, 8);
