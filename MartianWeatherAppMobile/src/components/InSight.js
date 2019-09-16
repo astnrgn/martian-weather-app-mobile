@@ -200,14 +200,14 @@ const styles = StyleSheet.create({
   },
   maxMultipleText: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 13,
     color: '#fbf7f5',
     letterSpacing: 2,
     textAlign: 'center',
   },
   minMultipleText: {
     fontWeight: 'normal',
-    fontSize: 13,
+    fontSize: 11,
     color: '#fbf7f5',
     textAlign: 'center',
   },
