@@ -43,7 +43,7 @@ export default class HomeComponent extends Component {
               <Text style={styles.keyTitles}>
                 Sol:{' '}
                 <Text style={styles.keyDescriptions}>
-                  Number of Martian Days since landing
+                  Number of martian days since landing
                 </Text>
               </Text>
             </View>
@@ -53,7 +53,7 @@ export default class HomeComponent extends Component {
               <Text style={styles.keyTitles}>
                 Earth:{' '}
                 <Text style={styles.keyDescriptions}>
-                  Corresponding Date on Earth
+                  Corresponding date on Earth
                 </Text>
               </Text>
             </View>
@@ -61,9 +61,9 @@ export default class HomeComponent extends Component {
           <View style={styles.centerKeys}>
             <View>
               <Text style={styles.keyTitles}>
-                H / F:{' '}
+                H / L:{' '}
                 <Text style={styles.keyDescriptions}>
-                  High and Low temperatures in Fahrenheit
+                  High and low temperatures in Fahrenheit
                 </Text>
               </Text>
             </View>

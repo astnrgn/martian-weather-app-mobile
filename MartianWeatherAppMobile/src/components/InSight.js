@@ -2,7 +2,7 @@ import React, {Component, useState} from 'react';
 import {StyleSheet, Animated, View, Text} from 'react-native';
 import axios from 'axios';
 const inSightSearchUrl =
-  'https://api.nasa.gov/insight_weather/?api_key=xM37sJTj9e3rcHJysfB3KnZrZk8aXmJH7BGzTzZd&feedtype=json&ver=1.0';
+  'https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0';
 
 const FadeInView = props => {
   const [fadeAdmin] = useState(new Animated.Value(0));
@@ -90,6 +90,7 @@ export default class InSightComponent extends Component {
     });
     let currentMax = this.state.inSightWeatherData
       .slice(0, 7)
+      .reverse()
       .map((day, index) => {
         if (index == 0) {
           return (
