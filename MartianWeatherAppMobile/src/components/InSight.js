@@ -38,7 +38,7 @@ export default class InSightComponent extends Component {
       .get(inSightSearchUrl)
       .then(response => {
         let sol = response.data.sol_keys;
-        let newInsightData = sol.map(solNumber => {
+        let newInsightData = sol.reverse().map(solNumber => {
           let formattedData = {
             martianDate: solNumber,
             earthDate: response.data[solNumber].First_UTC,
@@ -90,7 +90,6 @@ export default class InSightComponent extends Component {
     });
     let currentMax = this.state.inSightWeatherData
       .slice(0, 7)
-      .reverse()
       .map((day, index) => {
         if (index == 0) {
           return (
